@@ -86,69 +86,29 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-Type": "text/css" });
       res.end(content);
     });
-  } else if (req.url === "/Images/bit.jpeg") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "bit.jpeg"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/jpeg" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/ca.jpeg") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "ca.jpeg"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/jpeg" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/hub.png") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "hub.png"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/png" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/jira.jpeg") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "jira.jpeg"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/jpeg" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/linkedin.png") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "linkedin.png"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/png" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/Logo.png") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "Logo.png"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/png" });
-        res.end(content);
-      }
-    );
-  } else if (req.url === "/Images/UNHLogo.png") {
-    fs.readFile(
-      path.join(__dirname, "public/Images", "UNHLogo.png"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "image/png" });
-        res.end(content);
-      }
-    );
+  }
+  const images = [
+    "bit.jpeg",
+    "ca.jpeg",
+    "hub.png",
+    "jira.jpeg",
+    "linkedin.png",
+    "Logo.png",
+    "UNHLogo.png",
+    "writesea.png",
+  ];
+  for (const image of images) {
+    if (req.url === `/Images/${image}`) {
+      fs.readFile(
+        path.join(__dirname, "public/Images", image),
+        (err, content) => {
+          if (err) throw err;
+
+          res.writeHead(200, { "Content-Type": `image/${image.split(".")[1]}` });
+          res.end(content);
+        }
+      );
+    }
   }
   if (pathname === "/forcast") {
     const getForcast = async () => {
