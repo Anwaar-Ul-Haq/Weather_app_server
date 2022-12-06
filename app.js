@@ -5,8 +5,8 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 
-const hostname = "127.0.0.1";
-const port = 4000;
+const hostname = process.env.YOUR_HOST || "0.0.0.0";
+// const port = process.env.PORT || 4000;
 
 //! call weather forcast api
 const baseURL = "https://api.openweathermap.org/data/2.5/forecast";
@@ -63,6 +63,7 @@ const server = http.createServer((req, res) => {
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
+
   if (req.url === "/api") {
     const handleDb = async () => {
       let data = await dbConnect();
@@ -153,6 +154,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(process.env.PORT || 4000, hostname, () => {
+  console.log(
+    `Server running at http://${hostname}:${process.env.PORT || 4000}/`
+  );
 });
