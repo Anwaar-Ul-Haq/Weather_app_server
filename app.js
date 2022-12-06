@@ -2,6 +2,8 @@ const http = require("http");
 const url = require("url");
 const { MongoClient } = require("mongodb");
 const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
 
 const hostname = process.env.YOUR_HOST || "0.0.0.0";
 // const port = process.env.PORT || 4000;
@@ -75,6 +77,44 @@ const server = http.createServer((req, res) => {
       res.end();
     };
     handleDb();
+  } else if (req.url === "/") {
+    fs.readFile(
+      path.join(__dirname, "public", "index.html"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/style.css") {
+    fs.readFile(path.join(__dirname, "public", "style.css"), (err, content) => {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/css" });
+      res.end(content);
+    });
+  }
+  const images = [
+    "bit.jpeg",
+    "ca.jpeg",
+    "hub.png",
+    "jira.jpeg",
+    "linkedin.png",
+    "Logo.png",
+    "UNHLogo.png",
+    "writesea.png",
+  ];
+  for (const image of images) {
+    if (req.url === `/Images/${image}`) {
+      fs.readFile(
+        path.join(__dirname, "public/Images", image),
+        (err, content) => {
+          if (err) throw err;
+
+          res.writeHead(200, { "Content-Type": `image/${image.split(".")[1]}` });
+          res.end(content);
+        }
+      );
+    }
   }
   if (pathname === "/forcast") {
     const getForcast = async () => {

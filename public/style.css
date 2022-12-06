@@ -1,0 +1,664 @@
+   :root {
+    --main-radius : 5px;
+    --main-padding : 5px;
+    --blue : #77b5fe;
+    --white : #ffffff;
+    --yellowish : #f7c600;
+   }
+
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+   
+   body {
+    background-color:#ffffff;;
+    font-family: "Times New Roman";
+   }
+   
+   header a {
+    text-decoration: none;
+   }
+   
+   header {
+    position: fixed;
+    width: 100%;
+    padding: 0 20px;
+    background-color: #31356E;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 5px;
+   }
+
+   .logo{
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    margin: 5px; ;
+    padding: 5px;
+   }
+
+   .desktop-menu{
+    color: #31356E;
+   
+
+   }
+   
+   .desktop-menu ul {
+     list-style: none;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+   }
+   
+   .desktop-menu ul a {
+    color: #31356E
+   }
+   
+   .desktop-menu ul li {
+    padding: 12px 10px;
+     margin-left: 10px;
+     background-color: #ffffff;
+     border: 1px solid #31356E;
+     border-radius: 5px;
+     font-size: 20px;
+     font-style: oblique;
+     
+   }
+   
+   .desktop-menu ul li:hover {
+     transform: scale(1.1);
+     transition: 0.3s;
+   }
+   
+   #hamburger-icon {
+     margin: auto 0;
+     display: none;
+     cursor: pointer;
+   }
+   
+   #hamburger-icon div {
+     width: 35px;
+     height: 3px;
+     background-color: white;
+     margin: 6px 0;
+     transition: 0.4s;
+   }
+   
+   .open .bar1 {
+     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+     transform: rotate(-45deg) translate(-6px, 6px);
+   }
+   
+   .open .bar2 {
+     opacity: 0;
+   }
+   
+   .open .bar3 {
+     -webkit-transform: rotate(45deg) translate(-6px, -8px);
+     transform: rotate(45deg) translate(-6px, -8px);
+   }
+   
+   .open .mobile-menu {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+   }
+   
+   .mobile-menu {
+     display: none;
+     position: absolute;
+     background-color: #31356E;
+     top: 90px;
+     left: 0;
+     height: calc(290px);
+     width: 100%;
+     
+   }
+   
+   .mobile-menu li {
+    list-style: none;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 10px;
+
+   }
+   
+   @media only screen and (max-width: 500px) and (max-width:800px) {
+     header nav {
+       display: none;
+     }
+   
+     #hamburger-icon {
+       display: block;
+     }
+   }
+   
+   main {
+    background:#ffffff;
+    padding: var(--main-padding);
+    grid-area: main;
+   }
+   /* Hero Section DeskTop Verion */
+
+   .heroimg{
+    margin-top: 90px;
+    width: 100%;
+    height: 500px;
+   }
+.heroSection{
+    margin: 200px 20px 100px 20px;
+    
+}
+.heroSection h1{
+  margin-top: 5px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 100px;
+  font-style: oblique;
+  color: indigo;
+  
+}
+.heroSection h2{
+  margin-top: 10px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 40px;
+  font-style: oblique;
+  color: indigo;
+  }
+.heroSection h3{
+  text-align: center;
+  font-size: 70px;
+  font-style: oblique;
+  
+}
+
+/* Hero Section Mobile Version */
+@media only screen and (max-width:500px) and (max-width:800px) {
+  .heroSection{
+    margin: 5px;
+}
+
+.heroSection h1{
+  text-align: center;
+  font-size: 80px;
+  font-style: oblique;
+  color: #31356E;
+  
+}
+.heroSection h2{
+  margin-top: 150px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-style: oblique;
+  color: #31356E;
+  }
+
+  .heroSection h3{
+    text-align: center;
+    font-style: oblique;
+    padding-bottom: 10px;
+    color: #31356E;
+    
+}
+  
+}
+
+/* Summary DeskTop Version */
+
+.summary{
+  border-radius: 10%;
+    margin:10px 100px 10px 100px ;
+    padding: 20px;
+    background: #31356E;
+    color: #000;
+}
+.summary h1{
+  color: #ffffff;
+  text-align: center;
+    font-size: 50px;
+    padding-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    
+}
+.summary p{
+  color: #ffffff;
+   text-align: center;
+     font-size: 35px;
+ }
+
+ .videointro{
+ padding-top: 20px;
+ margin-bottom: 10px;
+ padding-left: 25%;
+ padding-right: 25%;
+ padding-bottom: 30px;
+  
+ }
+ .videointro iframe{
+  width: 100%;
+  height: 400px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  }
+  /* Summary Mobile Version */
+ @media only screen and (max-width:500px) and (max-width:800px) {
+  .videointro{
+    padding-top: 20px;
+     padding-left: 5%;
+     padding-right: 5%;
+    }
+    .videointro iframe{
+      width: 100%;
+      height: 300px;
+    }
+    .summary{
+    padding: 20px;
+    border-radius: 5%;
+    margin:10px;
+    background: #31356E;
+    color: #000;
+  }
+  .summary h1{
+    text-align: center;
+      font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  
+      
+  }
+  .summary p{
+     text-align: left;
+       font-size: 20px;
+   }
+  
+ }
+
+ /* Experience DeskTop Version */
+.experience{
+  padding: 30px;
+  margin:20px 100px 20px 100px ;
+  background: #fff;
+  color: #31356E;
+  border: 2px solid #31356E;
+  border-radius: 10%;
+}
+.experience h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+.experience ul li {
+  margin: 30px;
+  font-size: 30px;
+}
+.position{
+  margin: 20px 0px 10px 30px ;
+  font-size: 30px;
+
+}
+.companyLogo{
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 10px 20px 10px 20px;
+  width: 80px;
+  height: 70px;
+}
+.company{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 30px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.experience h3 {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* Experience Mobile Version */
+@media only screen and (max-width:500px) and (max-width:800px) {
+  .experience{
+    padding: 20px;
+    margin: 10px; ;
+    background: #fff;
+    color: #31356E;
+    border: 2px solid #31356E;
+    border-radius: 5%;
+  }
+  .experience h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+  }
+  .experience ul li {
+    margin: 10px 20px;
+    font-size: 20px;
+  }
+  .position{
+    margin: 10px 0px 10px 15px ;
+    font-size: 25px;
+  
+  }
+  .companyLogo{
+    border: 1px solid #31356E;
+    border-radius: 5px;
+    margin: 10px;
+    width: 80px;
+    height: 70px;
+  }
+  .company{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 30px;
+    padding-left: 10px;
+    align-items: center;
+  }
+  
+  .experience h3 {
+    margin-left: 5px;
+    font-size: 20px;
+  }
+  
+}
+
+/* skills DeskTop Version */
+
+.skills{
+  padding: 20px;
+  margin:20px 100px 20px 100px ;
+  background: #31356E;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10%
+}
+.skills h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.skillslist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 30px;
+  padding-left: 10px;
+  align-items: center;
+}
+.skillslist ul li {
+  margin: 30px 100px 30px 100px;
+  font-size: 30px;
+}
+/* skills Mobile Version */
+
+@media only screen and (max-width:500px) and (max-width:800px) {
+  .skills{
+    padding: 20px;
+    margin: 10px; ;
+    background: #31356E;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  .skills h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .skillslist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 30px;
+    padding-left: 10px;
+    align-items: center;
+  }
+  .skillslist ul li {
+    margin:10;
+    font-size: 20px;
+  }
+ 
+}
+
+ /* education DeskTop Version */
+ .education{
+  margin:20px 100px 20px 100px ;
+  background: #fff;
+  border: 2px solid #31356E;
+  border-radius: 10px;
+  color: #31356E;
+  padding: 20px;
+}
+.education h1{
+text-align: center;
+font-size: 50px;
+margin-top: 20px;
+margin-bottom: 20px;
+
+  
+}
+.education p{
+ text-align: justify;
+ font-size: 35px;
+}
+
+.card { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  margin-bottom: 30px;
+  padding: 5px;
+ 
+  }
+.card > article {
+border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.card > article img {
+  max-width: 100%;
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.card > article  h3{
+  text-align: center;
+  padding: 0 20px 20px;
+}
+.card > article  p {
+  text-align: center;
+  padding: 0 20px 20px;
+  font-size: 20px;
+}
+.card > article button {
+  margin-left: 100px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background:#31356E;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  width: 300px;
+}
+
+
+/* education Mobile Version */
+@media only screen and (max-width:500px) and (max-width:800px) {
+  .education{
+  margin: 10px; ;
+  background: #fff;
+  border: 2px solid #31356E;
+  border-radius: 10px;
+  color: #31356E;
+  padding: 20px;
+  }
+  .education h1{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  
+    
+  }
+  .education p{
+    margin:5px;
+   text-align: center;
+   font-size: 20px;
+  }
+
+  .card { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  margin-bottom: 30px;
+  padding: 5px;
+  
+    }
+  .card > article {
+    border: 1px solid #000;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  }
+  .card > article img {
+  width: 100%;
+   height: 350px;
+   
+  }
+  
+  .card > article  h3{
+    text-align: center;
+    font-size: 30px;
+  }
+  .card > article  p {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .card > article button {
+    margin-left: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    background: #31356E;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    width: 300px;
+  }
+}
+
+/* projects DeskTop Version */
+.projects{
+  padding: 20px;
+  margin:20px 100px 20px 100px ;
+  background: #31356E;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10%;
+}
+.projects h1{
+text-align: center;
+font-size: 50px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.projects p{
+ text-align: center;
+ font-size: 35px;
+}
+
+
+
+/* projects Mobile Version */
+@media only screen and (max-width:500px) and (max-width:800px){
+
+  .projects{
+  padding: 20px;
+  margin: 10px; ;
+  background: #31356E;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  }
+  .projects h1{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  .projects p{
+   text-align: center;
+   font-size: 20px;
+  }
+  
+}
+
+  /* Footer DeskTop Version */
+  footer{
+    background: #31356E;
+    padding: var(--main-padding);
+    grid-area: footer;
+    border: 2px solid #000;
+    border-radius: 10px;
+   }
+
+   .socialIcons{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+   }
+   .socialIcons img {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    width: 200px;
+    height: 100px;
+   }
+
+/* Footer Mobile Version */
+   @media only screen and (max-width:500px) and (max-width:800px) {
+    footer{
+      margin: 10px;
+      background: #fff;
+      
+      padding: var(--main-padding);
+     }
+  
+     .socialIcons{
+      display: grid;
+      margin-left:60px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-gap: 10px;
+      padding-left: 10px;
+      margin-bottom: 100px;
+      padding-bottom: 100px;
+     }
+     .socialIcons img {
+      border-radius: 5px;
+      border: 2px solid #31356E;
+      margin-top: 20px;
+      width: 200px;
+      height: 100px;
+     }
+   
+  }
