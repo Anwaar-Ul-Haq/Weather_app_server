@@ -4,7 +4,7 @@ const { MongoClient } = require("mongodb");
 const axios = require("axios");
 
 const hostname = process.env.YOUR_HOST || "0.0.0.0";
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
 
 //! call weather forcast api
 const baseURL = "https://api.openweathermap.org/data/2.5/forecast";
@@ -119,6 +119,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(process.env.PORT || 4000, hostname, () => {
+  console.log(
+    `Server running at http://${hostname}:${process.env.PORT || 4000}/`
+  );
 });
