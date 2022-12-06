@@ -3,7 +3,7 @@ const url = require("url");
 const { MongoClient } = require("mongodb");
 const axios = require("axios");
 
-const hostname = "127.0.0.1";
+const hostname = process.env.YOUR_HOST || "0.0.0.0";
 const port = process.env.PORT || 4000;
 
 //! call weather forcast api
