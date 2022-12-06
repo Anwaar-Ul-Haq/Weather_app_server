@@ -61,6 +61,12 @@ const server = http.createServer((req, res) => {
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
+
+  if (req.url === "/") {
+    res.setHeader("Content-Type", "text/html");
+    res.write("Weather Forcast App By Anwaar Ul Haq");
+    res.end();
+  }
   if (req.url === "/api") {
     const handleDb = async () => {
       let data = await dbConnect();
