@@ -108,7 +108,7 @@ const server = http.createServer((req, res) => {
       fs.readFile(
         path.join(__dirname, "public/Images", image),
         (err, content) => {
-          if (err) throw err;
+          if (err) console.log(err);;
 
           res.writeHead(200, { "Content-Type": `image/${image.split(".")[1]}` });
           res.end(content);
