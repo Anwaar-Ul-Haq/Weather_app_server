@@ -2,6 +2,8 @@ const http = require("http");
 const url = require("url");
 const { MongoClient } = require("mongodb");
 const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
 
 const hostname = "127.0.0.1";
 const port = 4000;
@@ -69,6 +71,84 @@ const server = http.createServer((req, res) => {
       res.end();
     };
     handleDb();
+  } else if (req.url === "/") {
+    fs.readFile(
+      path.join(__dirname, "public", "index.html"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/style.css") {
+    fs.readFile(path.join(__dirname, "public", "style.css"), (err, content) => {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/css" });
+      res.end(content);
+    });
+  } else if (req.url === "/Images/bit.jpeg") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "bit.jpeg"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/jpeg" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/ca.jpeg") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "ca.jpeg"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/jpeg" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/hub.png") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "hub.png"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/jira.jpeg") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "jira.jpeg"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/jpeg" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/linkedin.png") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "linkedin.png"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/Logo.png") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "Logo.png"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.end(content);
+      }
+    );
+  } else if (req.url === "/Images/UNHLogo.png") {
+    fs.readFile(
+      path.join(__dirname, "public/Images", "UNHLogo.png"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.end(content);
+      }
+    );
   }
   if (pathname === "/forcast") {
     const getForcast = async () => {
