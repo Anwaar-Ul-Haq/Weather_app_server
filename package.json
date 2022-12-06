@@ -1,5 +1,5 @@
 {
-  "name": "weather-forcast-node-api",
+  "name": "weather_app_sever",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
